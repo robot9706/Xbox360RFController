@@ -446,7 +446,7 @@
             this.bootAnimBlinkPWRButton.Size = new System.Drawing.Size(168, 35);
             this.bootAnimBlinkPWRButton.TabIndex = 9;
             this.bootAnimBlinkPWRButton.Tag = "0";
-            this.bootAnimBlinkPWRButton.Text = "Boot anim... (blinl PWR)";
+            this.bootAnimBlinkPWRButton.Text = "Boot anim... (blink PWR)";
             this.bootAnimBlinkPWRButton.UseVisualStyleBackColor = true;
             this.bootAnimBlinkPWRButton.Click += new System.EventHandler(this.bootAnimBlinkPWRButton_Click);
             // 
