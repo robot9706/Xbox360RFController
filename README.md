@@ -12,7 +12,7 @@ IMPORTANT:
  !BUT! if you're using a real/hardware serial port then you need to match the voltage levels. 
  The RF module uses 0-3.3V but the serial port is (-12)-12V!!!
 
--Make sure that the RF module and your serial port has common ground [connect them :)].
+-Make sure that the RF module and your serial port have common ground [connect them :)].
  
 Program:
 If the setup is done, then start the program, select the port, open it, and that's it, you can send commands! :D
