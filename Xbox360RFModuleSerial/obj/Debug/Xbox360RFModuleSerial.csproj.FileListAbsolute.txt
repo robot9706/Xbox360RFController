@@ -16,3 +16,12 @@ D:\CSharp\Other\Xbox360RFModuleSerial\Xbox360RFModuleSerial\obj\Debug\Xbox360RFM
 D:\CSharp\Other\Xbox360RFModuleSerial\Xbox360RFModuleSerial\obj\Debug\Xbox360RFModuleSerial.MainForm.resources
 D:\CSharp\Other\Xbox360RFModuleSerial\Xbox360RFModuleSerial\obj\Debug\Xbox360RFModuleSerial.Properties.Resources.resources
 D:\CSharp\Other\Xbox360RFModuleSerial\Xbox360RFModuleSerial\obj\Debug\Xbox360RFModuleSerial.csproj.GenerateResource.Cache
+C:\Users\Bence\Documents\GitHub\Xbox360RFController\Xbox360RFModuleSerial\bin\Debug\Xbox360RFModuleSerial.exe.config
+C:\Users\Bence\Documents\GitHub\Xbox360RFController\Xbox360RFModuleSerial\obj\Debug\Xbox360RFModuleSerial.exe
+C:\Users\Bence\Documents\GitHub\Xbox360RFController\Xbox360RFModuleSerial\obj\Debug\Xbox360RFModuleSerial.pdb
+C:\Users\Bence\Documents\GitHub\Xbox360RFController\Xbox360RFModuleSerial\bin\Debug\Xbox360RFModuleSerial.exe
+C:\Users\Bence\Documents\GitHub\Xbox360RFController\Xbox360RFModuleSerial\bin\Debug\Xbox360RFModuleSerial.pdb
+C:\Users\Bence\Documents\GitHub\Xbox360RFController\Xbox360RFModuleSerial\obj\Debug\Xbox360RFModuleSerial.csprojResolveAssemblyReference.cache
+C:\Users\Bence\Documents\GitHub\Xbox360RFController\Xbox360RFModuleSerial\obj\Debug\Xbox360RFModuleSerial.MainForm.resources
+C:\Users\Bence\Documents\GitHub\Xbox360RFController\Xbox360RFModuleSerial\obj\Debug\Xbox360RFModuleSerial.Properties.Resources.resources
+C:\Users\Bence\Documents\GitHub\Xbox360RFController\Xbox360RFModuleSerial\obj\Debug\Xbox360RFModuleSerial.csproj.GenerateResource.Cache

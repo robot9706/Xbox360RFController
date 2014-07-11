@@ -97,15 +97,33 @@ namespace Xbox360RFModuleSerial
         {
             WriteData(false); //Start sending data
 
+            DateTime sendStart = DateTime.Now;
+
             bool prev = true;
             for (int x = 0; x < 10; x++)
             {
-                while (prev == ReadClock()) { } //Detects change in clock
+                while (prev == ReadClock()) 
+                {
+                    if (DateTime.Now.Subtract(sendStart).TotalSeconds > 2)
+                    {
+                        MessageBox.Show("The operation has timed out!\nNot receiving clock signal!");
+                        return;
+                    }
+                } //Detects change in clock
+                sendStart = DateTime.Now;
                 prev = ReadClock();
 
                 WriteData(cmd[x]);
 
-                while (prev == ReadClock()) { } //Detects change in clock
+                while (prev == ReadClock())
+                {
+                    if (DateTime.Now.Subtract(sendStart).TotalSeconds > 2)
+                    {
+                        MessageBox.Show("The operation has timed out!\nNot receiving clock signal!");
+                        return;
+                    }
+                } //Detects change in clock
+                sendStart = DateTime.Now;
                 prev = ReadClock();
             }
 

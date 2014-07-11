@@ -309,7 +309,7 @@
             // 
             // fRedBlinkAllButton
             // 
-            this.fRedBlinkAllButton.Location = new System.Drawing.Point(320, 103);
+            this.fRedBlinkAllButton.Location = new System.Drawing.Point(320, 101);
             this.fRedBlinkAllButton.Name = "fRedBlinkAllButton";
             this.fRedBlinkAllButton.Size = new System.Drawing.Size(118, 35);
             this.fRedBlinkAllButton.TabIndex = 20;
@@ -331,7 +331,7 @@
             // 
             // fRedBlink4Button
             // 
-            this.fRedBlink4Button.Location = new System.Drawing.Point(384, 62);
+            this.fRedBlink4Button.Location = new System.Drawing.Point(384, 60);
             this.fRedBlink4Button.Name = "fRedBlink4Button";
             this.fRedBlink4Button.Size = new System.Drawing.Size(118, 35);
             this.fRedBlink4Button.TabIndex = 19;
@@ -342,7 +342,7 @@
             // 
             // clearErrorButton
             // 
-            this.clearErrorButton.Location = new System.Drawing.Point(298, 141);
+            this.clearErrorButton.Location = new System.Drawing.Point(298, 139);
             this.clearErrorButton.Name = "clearErrorButton";
             this.clearErrorButton.Size = new System.Drawing.Size(166, 35);
             this.clearErrorButton.TabIndex = 12;
@@ -353,7 +353,7 @@
             // 
             // fRedBlink3Button
             // 
-            this.fRedBlink3Button.Location = new System.Drawing.Point(258, 62);
+            this.fRedBlink3Button.Location = new System.Drawing.Point(258, 60);
             this.fRedBlink3Button.Name = "fRedBlink3Button";
             this.fRedBlink3Button.Size = new System.Drawing.Size(118, 35);
             this.fRedBlink3Button.TabIndex = 18;
@@ -364,7 +364,7 @@
             // 
             // fRedBlink2Button
             // 
-            this.fRedBlink2Button.Location = new System.Drawing.Point(384, 21);
+            this.fRedBlink2Button.Location = new System.Drawing.Point(384, 19);
             this.fRedBlink2Button.Name = "fRedBlink2Button";
             this.fRedBlink2Button.Size = new System.Drawing.Size(118, 35);
             this.fRedBlink2Button.TabIndex = 17;
@@ -375,7 +375,7 @@
             // 
             // fRedBlink1Button
             // 
-            this.fRedBlink1Button.Location = new System.Drawing.Point(258, 21);
+            this.fRedBlink1Button.Location = new System.Drawing.Point(258, 19);
             this.fRedBlink1Button.Name = "fRedBlink1Button";
             this.fRedBlink1Button.Size = new System.Drawing.Size(118, 35);
             this.fRedBlink1Button.TabIndex = 16;
