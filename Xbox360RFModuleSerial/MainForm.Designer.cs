@@ -86,6 +86,8 @@
             this.nameLbl = new System.Windows.Forms.Label();
             this.helpLbl = new System.Windows.Forms.Label();
             this.linkLabel = new System.Windows.Forms.LinkLabel();
+            this.clockInvertCb = new System.Windows.Forms.CheckBox();
+            this.invertDataCb = new System.Windows.Forms.CheckBox();
             this.commandBox.SuspendLayout();
             this.controllerBox.SuspendLayout();
             this.greenManualBox.SuspendLayout();
@@ -137,7 +139,7 @@
             this.commandBox.Controls.Add(this.powerLed);
             this.commandBox.Controls.Add(this.configBox);
             this.commandBox.Enabled = false;
-            this.commandBox.Location = new System.Drawing.Point(17, 48);
+            this.commandBox.Location = new System.Drawing.Point(17, 68);
             this.commandBox.Name = "commandBox";
             this.commandBox.Size = new System.Drawing.Size(877, 410);
             this.commandBox.TabIndex = 3;
@@ -706,7 +708,7 @@
             this.nameLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.nameLbl.AutoSize = true;
             this.nameLbl.ForeColor = System.Drawing.Color.Silver;
-            this.nameLbl.Location = new System.Drawing.Point(696, 458);
+            this.nameLbl.Location = new System.Drawing.Point(696, 483);
             this.nameLbl.Name = "nameLbl";
             this.nameLbl.Size = new System.Drawing.Size(207, 16);
             this.nameLbl.TabIndex = 5;
@@ -733,11 +735,37 @@
             this.linkLabel.Text = "More info";
             this.linkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_LinkClicked);
             // 
+            // clockInvertCb
+            // 
+            this.clockInvertCb.AutoSize = true;
+            this.clockInvertCb.Checked = true;
+            this.clockInvertCb.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.clockInvertCb.Location = new System.Drawing.Point(88, 42);
+            this.clockInvertCb.Name = "clockInvertCb";
+            this.clockInvertCb.Size = new System.Drawing.Size(115, 20);
+            this.clockInvertCb.TabIndex = 8;
+            this.clockInvertCb.Text = "Invert clock pin";
+            this.clockInvertCb.UseVisualStyleBackColor = true;
+            // 
+            // invertDataCb
+            // 
+            this.invertDataCb.AutoSize = true;
+            this.invertDataCb.Checked = true;
+            this.invertDataCb.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.invertDataCb.Location = new System.Drawing.Point(227, 42);
+            this.invertDataCb.Name = "invertDataCb";
+            this.invertDataCb.Size = new System.Drawing.Size(110, 20);
+            this.invertDataCb.TabIndex = 9;
+            this.invertDataCb.Text = "Invert data pin";
+            this.invertDataCb.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(902, 473);
+            this.ClientSize = new System.Drawing.Size(902, 498);
+            this.Controls.Add(this.invertDataCb);
+            this.Controls.Add(this.clockInvertCb);
             this.Controls.Add(this.linkLabel);
             this.Controls.Add(this.helpLbl);
             this.Controls.Add(this.nameLbl);
@@ -826,6 +854,8 @@
         private System.Windows.Forms.Label nameLbl;
         private System.Windows.Forms.Label helpLbl;
         private System.Windows.Forms.LinkLabel linkLabel;
+        private System.Windows.Forms.CheckBox clockInvertCb;
+        private System.Windows.Forms.CheckBox invertDataCb;
     }
 }
 

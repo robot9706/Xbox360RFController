@@ -85,12 +85,18 @@ namespace Xbox360RFModuleSerial
 
         private void WriteData(bool value)
         {
-            _port.RtsEnable = !value;
+            if (invertDataCb.Checked)
+                _port.RtsEnable = !value;
+            else
+                _port.RtsEnable = value;
         }
 
         private bool ReadClock()
         {
-            return !_port.CtsHolding;
+            if (clockInvertCb.Checked)
+                return !_port.CtsHolding;
+
+            return _port.CtsHolding;
         }
 
         private void SendCommand(bool[] cmd)
