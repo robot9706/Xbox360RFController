@@ -636,7 +636,7 @@
             // helpLbl
             // 
             this.helpLbl.AutoSize = true;
-            this.helpLbl.Location = new System.Drawing.Point(470, 13);
+            this.helpLbl.Location = new System.Drawing.Point(488, 13);
             this.helpLbl.Name = "helpLbl";
             this.helpLbl.Size = new System.Drawing.Size(353, 32);
             this.helpLbl.TabIndex = 6;
@@ -646,7 +646,7 @@
             // linkLabel
             // 
             this.linkLabel.AutoSize = true;
-            this.linkLabel.Location = new System.Drawing.Point(825, 29);
+            this.linkLabel.Location = new System.Drawing.Point(488, 60);
             this.linkLabel.Name = "linkLabel";
             this.linkLabel.Size = new System.Drawing.Size(63, 16);
             this.linkLabel.TabIndex = 7;
