@@ -25,3 +25,4 @@ C:\Users\Bence\Documents\GitHub\Xbox360RFController\Xbox360RFModuleSerial\obj\De
 C:\Users\Bence\Documents\GitHub\Xbox360RFController\Xbox360RFModuleSerial\obj\Debug\Xbox360RFModuleSerial.MainForm.resources
 C:\Users\Bence\Documents\GitHub\Xbox360RFController\Xbox360RFModuleSerial\obj\Debug\Xbox360RFModuleSerial.Properties.Resources.resources
 C:\Users\Bence\Documents\GitHub\Xbox360RFController\Xbox360RFModuleSerial\obj\Debug\Xbox360RFModuleSerial.csproj.GenerateResource.Cache
+C:\Users\Bence\Documents\GitHub\Xbox360RFController\Xbox360RFModuleSerial\obj\Debug\Xbox360RFModuleSerial.ConnTestForm.resources

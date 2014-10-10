@@ -16,6 +16,11 @@ namespace Xbox360RFModuleSerial
     {
         private SerialPort _port;
 
+        public bool IsRTSInverted
+        {
+            get { return invertDataCb.Checked; }
+        }
+
         public MainForm()
         {
             InitializeComponent();
@@ -29,16 +34,14 @@ namespace Xbox360RFModuleSerial
 
             powerCombo.SelectedIndex = 0;
             orientationCombo.SelectedIndex = 0;
+        }
 
-            greenLed1Combo.SelectedIndex = 1;
-            greenLed2Combo.SelectedIndex = 1;
-            greenLed3Combo.SelectedIndex = 1;
-            greenLed4Combo.SelectedIndex = 1;
-
-            redLed1Combo.SelectedIndex = 1;
-            redLed2Combo.SelectedIndex = 1;
-            redLed3Combo.SelectedIndex = 1;
-            redLed4Combo.SelectedIndex = 1;
+        private void refreshComs_Click(object sender, EventArgs e)
+        {
+            portCombo.Items.Clear();
+            portCombo.Items.AddRange(SerialPort.GetPortNames());
+            if (portCombo.Items.Count > 0)
+                portCombo.SelectedIndex = 0;
         }
 
         private void openPort(object sender, EventArgs e)
@@ -52,11 +55,11 @@ namespace Xbox360RFModuleSerial
                     _port.Close();
                     _port.Dispose();
                 }
-
+                
                 try
                 {
                     _port = new SerialPort((string)portCombo.Items[portCombo.SelectedIndex]);
-                    _port.BaudRate = 11500;
+                    _port.BaudRate = 115200;
                     _port.Open();
 
                     openButton.Enabled = false;
@@ -83,7 +86,15 @@ namespace Xbox360RFModuleSerial
             }
         }
 
-        private void WriteData(bool value)
+        public bool GetOutputSignal()
+        {
+            if (invertDataCb.Checked)
+                return !_port.RtsEnable;
+            else
+                return _port.RtsEnable;
+        }
+
+        public void WriteData(bool value)
         {
             if (invertDataCb.Checked)
                 _port.RtsEnable = !value;
@@ -91,7 +102,7 @@ namespace Xbox360RFModuleSerial
                 _port.RtsEnable = value;
         }
 
-        private bool ReadClock()
+        public bool ReadClock()
         {
             if (clockInvertCb.Checked)
                 return !_port.CtsHolding;
@@ -196,22 +207,12 @@ namespace Xbox360RFModuleSerial
 
         private void sendGreenLedsButton_Click(object sender, EventArgs e) //00 1010 ABCD
         {
-            bool a = (greenLed1Combo.SelectedIndex == 0);
-            bool b = (greenLed2Combo.SelectedIndex == 0);
-            bool c = (greenLed3Combo.SelectedIndex == 0);
-            bool d = (greenLed4Combo.SelectedIndex == 0);
-
-            SendCommand(new bool[] { false, false, true, false, true, false, a, b, c, d });
+            SendCommand(new bool[] { false, false, true, false, true, false, greenLed1.Checked, greenLed2.Checked, greenLed3.Checked, greenLed4.Checked });
         }
 
         private void sendRedLedsButton_Click(object sender, EventArgs e) //00 1011 ABCD
         {
-            bool a = (redLed1Combo.SelectedIndex == 0);
-            bool b = (redLed2Combo.SelectedIndex == 0);
-            bool c = (redLed3Combo.SelectedIndex == 0);
-            bool d = (redLed4Combo.SelectedIndex == 0);
-
-            SendCommand(new bool[] { false, false, true, false, true, true, a, b, c, d });
+            SendCommand(new bool[] { false, false, true, false, true, true, redLed1.Checked, redLed2.Checked, redLed3.Checked, redLed4.Checked });
         }
 
         private void clearErrorButton_Click(object sender, EventArgs e) //00 1100 0000
@@ -277,6 +278,14 @@ namespace Xbox360RFModuleSerial
         private void linkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Process.Start("http://tkkrlab.nl/wiki/XBOX_360_RF_Module");
+        }
+
+        private void connTest_Click(object sender, EventArgs e)
+        {
+            using (ConnTestForm t = new ConnTestForm(this))
+            {
+                t.ShowDialog();
+            }
         }
     }
 }

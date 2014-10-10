@@ -33,19 +33,16 @@
             this.portCombo = new System.Windows.Forms.ComboBox();
             this.openButton = new System.Windows.Forms.Button();
             this.commandBox = new System.Windows.Forms.GroupBox();
+            this.connTest = new System.Windows.Forms.Button();
+            this.greenManualBox = new System.Windows.Forms.GroupBox();
+            this.greenLed4 = new System.Windows.Forms.CheckBox();
+            this.greenLed2 = new System.Windows.Forms.CheckBox();
+            this.greenLed3 = new System.Windows.Forms.CheckBox();
+            this.greenLed1 = new System.Windows.Forms.CheckBox();
+            this.sendGreenLedsButton = new System.Windows.Forms.Button();
             this.controllerBox = new System.Windows.Forms.GroupBox();
             this.syncButton = new System.Windows.Forms.Button();
             this.controllerOff = new System.Windows.Forms.Button();
-            this.greenManualBox = new System.Windows.Forms.GroupBox();
-            this.greenLed4Combo = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.sendGreenLedsButton = new System.Windows.Forms.Button();
-            this.greenLed3Combo = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.greenLed2Combo = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.greenLed1Combo = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.redBox = new System.Windows.Forms.GroupBox();
             this.fRedBlinkAllButton = new System.Windows.Forms.Button();
             this.ledsAmber = new System.Windows.Forms.Button();
@@ -65,15 +62,11 @@
             this.ledInitNoPwr = new System.Windows.Forms.Button();
             this.bootAnimButton = new System.Windows.Forms.Button();
             this.redManualBox = new System.Windows.Forms.GroupBox();
-            this.redLed4Combo = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.redLed4 = new System.Windows.Forms.CheckBox();
+            this.redLed2 = new System.Windows.Forms.CheckBox();
+            this.redLed3 = new System.Windows.Forms.CheckBox();
+            this.redLed1 = new System.Windows.Forms.CheckBox();
             this.sendRedLedsButton = new System.Windows.Forms.Button();
-            this.redLed3Combo = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.redLed2Combo = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.redLed1Combo = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.ledOffButton = new System.Windows.Forms.Button();
             this.powerLed = new System.Windows.Forms.Button();
             this.configBox = new System.Windows.Forms.GroupBox();
@@ -88,18 +81,21 @@
             this.linkLabel = new System.Windows.Forms.LinkLabel();
             this.clockInvertCb = new System.Windows.Forms.CheckBox();
             this.invertDataCb = new System.Windows.Forms.CheckBox();
+            this.inputBox = new System.Windows.Forms.GroupBox();
+            this.refreshComs = new System.Windows.Forms.Button();
             this.commandBox.SuspendLayout();
-            this.controllerBox.SuspendLayout();
             this.greenManualBox.SuspendLayout();
+            this.controllerBox.SuspendLayout();
             this.redBox.SuspendLayout();
             this.redManualBox.SuspendLayout();
             this.configBox.SuspendLayout();
+            this.inputBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // comlbl
             // 
             this.comlbl.AutoSize = true;
-            this.comlbl.Location = new System.Drawing.Point(15, 17);
+            this.comlbl.Location = new System.Drawing.Point(7, 24);
             this.comlbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.comlbl.Name = "comlbl";
             this.comlbl.Size = new System.Drawing.Size(67, 16);
@@ -109,14 +105,14 @@
             // portCombo
             // 
             this.portCombo.FormattingEnabled = true;
-            this.portCombo.Location = new System.Drawing.Point(88, 12);
+            this.portCombo.Location = new System.Drawing.Point(80, 19);
             this.portCombo.Name = "portCombo";
             this.portCombo.Size = new System.Drawing.Size(214, 24);
             this.portCombo.TabIndex = 1;
             // 
             // openButton
             // 
-            this.openButton.Location = new System.Drawing.Point(308, 12);
+            this.openButton.Location = new System.Drawing.Point(300, 19);
             this.openButton.Name = "openButton";
             this.openButton.Size = new System.Drawing.Size(75, 23);
             this.openButton.TabIndex = 2;
@@ -126,8 +122,9 @@
             // 
             // commandBox
             // 
-            this.commandBox.Controls.Add(this.controllerBox);
+            this.commandBox.Controls.Add(this.connTest);
             this.commandBox.Controls.Add(this.greenManualBox);
+            this.commandBox.Controls.Add(this.controllerBox);
             this.commandBox.Controls.Add(this.redBox);
             this.commandBox.Controls.Add(this.bootAnimBlinkPWRButton);
             this.commandBox.Controls.Add(this.ledInitBlinkPWRButton);
@@ -139,12 +136,87 @@
             this.commandBox.Controls.Add(this.powerLed);
             this.commandBox.Controls.Add(this.configBox);
             this.commandBox.Enabled = false;
-            this.commandBox.Location = new System.Drawing.Point(17, 68);
+            this.commandBox.Location = new System.Drawing.Point(12, 99);
             this.commandBox.Name = "commandBox";
-            this.commandBox.Size = new System.Drawing.Size(877, 410);
+            this.commandBox.Size = new System.Drawing.Size(877, 409);
             this.commandBox.TabIndex = 3;
             this.commandBox.TabStop = false;
             this.commandBox.Text = "Commands:";
+            // 
+            // connTest
+            // 
+            this.connTest.Location = new System.Drawing.Point(717, 28);
+            this.connTest.Name = "connTest";
+            this.connTest.Size = new System.Drawing.Size(150, 36);
+            this.connTest.TabIndex = 16;
+            this.connTest.Text = "Test connection";
+            this.connTest.UseVisualStyleBackColor = true;
+            this.connTest.Click += new System.EventHandler(this.connTest_Click);
+            // 
+            // greenManualBox
+            // 
+            this.greenManualBox.Controls.Add(this.greenLed4);
+            this.greenManualBox.Controls.Add(this.greenLed2);
+            this.greenManualBox.Controls.Add(this.greenLed3);
+            this.greenManualBox.Controls.Add(this.greenLed1);
+            this.greenManualBox.Controls.Add(this.sendGreenLedsButton);
+            this.greenManualBox.Location = new System.Drawing.Point(541, 22);
+            this.greenManualBox.Name = "greenManualBox";
+            this.greenManualBox.Size = new System.Drawing.Size(170, 125);
+            this.greenManualBox.TabIndex = 15;
+            this.greenManualBox.TabStop = false;
+            this.greenManualBox.Text = "Green leds";
+            // 
+            // greenLed4
+            // 
+            this.greenLed4.AutoSize = true;
+            this.greenLed4.Location = new System.Drawing.Point(91, 48);
+            this.greenLed4.Name = "greenLed4";
+            this.greenLed4.Size = new System.Drawing.Size(60, 20);
+            this.greenLed4.TabIndex = 14;
+            this.greenLed4.Text = "Led 4";
+            this.greenLed4.UseVisualStyleBackColor = true;
+            // 
+            // greenLed2
+            // 
+            this.greenLed2.AutoSize = true;
+            this.greenLed2.Location = new System.Drawing.Point(91, 22);
+            this.greenLed2.Name = "greenLed2";
+            this.greenLed2.Size = new System.Drawing.Size(60, 20);
+            this.greenLed2.TabIndex = 13;
+            this.greenLed2.Text = "Led 2";
+            this.greenLed2.UseVisualStyleBackColor = true;
+            // 
+            // greenLed3
+            // 
+            this.greenLed3.AutoSize = true;
+            this.greenLed3.Location = new System.Drawing.Point(22, 48);
+            this.greenLed3.Name = "greenLed3";
+            this.greenLed3.Size = new System.Drawing.Size(60, 20);
+            this.greenLed3.TabIndex = 12;
+            this.greenLed3.Text = "Led 3";
+            this.greenLed3.UseVisualStyleBackColor = true;
+            // 
+            // greenLed1
+            // 
+            this.greenLed1.AutoSize = true;
+            this.greenLed1.Location = new System.Drawing.Point(22, 22);
+            this.greenLed1.Name = "greenLed1";
+            this.greenLed1.Size = new System.Drawing.Size(60, 20);
+            this.greenLed1.TabIndex = 11;
+            this.greenLed1.Text = "Led 1";
+            this.greenLed1.UseVisualStyleBackColor = true;
+            // 
+            // sendGreenLedsButton
+            // 
+            this.sendGreenLedsButton.Location = new System.Drawing.Point(15, 78);
+            this.sendGreenLedsButton.Name = "sendGreenLedsButton";
+            this.sendGreenLedsButton.Size = new System.Drawing.Size(136, 35);
+            this.sendGreenLedsButton.TabIndex = 10;
+            this.sendGreenLedsButton.Tag = "0";
+            this.sendGreenLedsButton.Text = "Send";
+            this.sendGreenLedsButton.UseVisualStyleBackColor = true;
+            this.sendGreenLedsButton.Click += new System.EventHandler(this.sendGreenLedsButton_Click);
             // 
             // controllerBox
             // 
@@ -179,115 +251,6 @@
             this.controllerOff.UseVisualStyleBackColor = true;
             this.controllerOff.Click += new System.EventHandler(this.controllerOff_Click);
             // 
-            // greenManualBox
-            // 
-            this.greenManualBox.Controls.Add(this.greenLed4Combo);
-            this.greenManualBox.Controls.Add(this.label4);
-            this.greenManualBox.Controls.Add(this.sendGreenLedsButton);
-            this.greenManualBox.Controls.Add(this.greenLed3Combo);
-            this.greenManualBox.Controls.Add(this.label3);
-            this.greenManualBox.Controls.Add(this.greenLed2Combo);
-            this.greenManualBox.Controls.Add(this.label1);
-            this.greenManualBox.Controls.Add(this.greenLed1Combo);
-            this.greenManualBox.Controls.Add(this.label2);
-            this.greenManualBox.Location = new System.Drawing.Point(619, 22);
-            this.greenManualBox.Name = "greenManualBox";
-            this.greenManualBox.Size = new System.Drawing.Size(248, 179);
-            this.greenManualBox.TabIndex = 4;
-            this.greenManualBox.TabStop = false;
-            this.greenManualBox.Text = "Green leds";
-            // 
-            // greenLed4Combo
-            // 
-            this.greenLed4Combo.FormattingEnabled = true;
-            this.greenLed4Combo.Items.AddRange(new object[] {
-            "On",
-            "Off"});
-            this.greenLed4Combo.Location = new System.Drawing.Point(86, 109);
-            this.greenLed4Combo.Name = "greenLed4Combo";
-            this.greenLed4Combo.Size = new System.Drawing.Size(151, 24);
-            this.greenLed4Combo.TabIndex = 7;
-            // 
-            // label4
-            // 
-            this.label4.Location = new System.Drawing.Point(7, 108);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 25);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "LED 4:";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // sendGreenLedsButton
-            // 
-            this.sendGreenLedsButton.Location = new System.Drawing.Point(62, 138);
-            this.sendGreenLedsButton.Name = "sendGreenLedsButton";
-            this.sendGreenLedsButton.Size = new System.Drawing.Size(136, 35);
-            this.sendGreenLedsButton.TabIndex = 10;
-            this.sendGreenLedsButton.Tag = "0";
-            this.sendGreenLedsButton.Text = "Send";
-            this.sendGreenLedsButton.UseVisualStyleBackColor = true;
-            this.sendGreenLedsButton.Click += new System.EventHandler(this.sendGreenLedsButton_Click);
-            // 
-            // greenLed3Combo
-            // 
-            this.greenLed3Combo.FormattingEnabled = true;
-            this.greenLed3Combo.Items.AddRange(new object[] {
-            "On",
-            "Off"});
-            this.greenLed3Combo.Location = new System.Drawing.Point(86, 79);
-            this.greenLed3Combo.Name = "greenLed3Combo";
-            this.greenLed3Combo.Size = new System.Drawing.Size(151, 24);
-            this.greenLed3Combo.TabIndex = 5;
-            // 
-            // label3
-            // 
-            this.label3.Location = new System.Drawing.Point(7, 78);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 25);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "LED 3:";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // greenLed2Combo
-            // 
-            this.greenLed2Combo.FormattingEnabled = true;
-            this.greenLed2Combo.Items.AddRange(new object[] {
-            "On",
-            "Off"});
-            this.greenLed2Combo.Location = new System.Drawing.Point(86, 49);
-            this.greenLed2Combo.Name = "greenLed2Combo";
-            this.greenLed2Combo.Size = new System.Drawing.Size(151, 24);
-            this.greenLed2Combo.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.Location = new System.Drawing.Point(7, 48);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 25);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "LED 2:";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // greenLed1Combo
-            // 
-            this.greenLed1Combo.FormattingEnabled = true;
-            this.greenLed1Combo.Items.AddRange(new object[] {
-            "On",
-            "Off"});
-            this.greenLed1Combo.Location = new System.Drawing.Point(86, 19);
-            this.greenLed1Combo.Name = "greenLed1Combo";
-            this.greenLed1Combo.Size = new System.Drawing.Size(151, 24);
-            this.greenLed1Combo.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.Location = new System.Drawing.Point(7, 19);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 25);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "LED 1:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // redBox
             // 
             this.redBox.Controls.Add(this.fRedBlinkAllButton);
@@ -302,7 +265,7 @@
             this.redBox.Controls.Add(this.redBlink3Button);
             this.redBox.Controls.Add(this.redBlink2Button);
             this.redBox.Controls.Add(this.redBlink1Button);
-            this.redBox.Location = new System.Drawing.Point(365, 212);
+            this.redBox.Location = new System.Drawing.Point(365, 163);
             this.redBox.Name = "redBox";
             this.redBox.Size = new System.Drawing.Size(502, 182);
             this.redBox.TabIndex = 13;
@@ -498,45 +461,61 @@
             // 
             // redManualBox
             // 
-            this.redManualBox.Controls.Add(this.redLed4Combo);
-            this.redManualBox.Controls.Add(this.label5);
+            this.redManualBox.Controls.Add(this.redLed4);
+            this.redManualBox.Controls.Add(this.redLed2);
+            this.redManualBox.Controls.Add(this.redLed3);
+            this.redManualBox.Controls.Add(this.redLed1);
             this.redManualBox.Controls.Add(this.sendRedLedsButton);
-            this.redManualBox.Controls.Add(this.redLed3Combo);
-            this.redManualBox.Controls.Add(this.label6);
-            this.redManualBox.Controls.Add(this.redLed2Combo);
-            this.redManualBox.Controls.Add(this.label7);
-            this.redManualBox.Controls.Add(this.redLed1Combo);
-            this.redManualBox.Controls.Add(this.label8);
             this.redManualBox.Location = new System.Drawing.Point(365, 22);
             this.redManualBox.Name = "redManualBox";
-            this.redManualBox.Size = new System.Drawing.Size(248, 179);
+            this.redManualBox.Size = new System.Drawing.Size(170, 125);
             this.redManualBox.TabIndex = 11;
             this.redManualBox.TabStop = false;
             this.redManualBox.Text = "Red leds";
             // 
-            // redLed4Combo
+            // redLed4
             // 
-            this.redLed4Combo.FormattingEnabled = true;
-            this.redLed4Combo.Items.AddRange(new object[] {
-            "On",
-            "Off"});
-            this.redLed4Combo.Location = new System.Drawing.Point(86, 109);
-            this.redLed4Combo.Name = "redLed4Combo";
-            this.redLed4Combo.Size = new System.Drawing.Size(151, 24);
-            this.redLed4Combo.TabIndex = 7;
+            this.redLed4.AutoSize = true;
+            this.redLed4.Location = new System.Drawing.Point(91, 48);
+            this.redLed4.Name = "redLed4";
+            this.redLed4.Size = new System.Drawing.Size(60, 20);
+            this.redLed4.TabIndex = 14;
+            this.redLed4.Text = "Led 4";
+            this.redLed4.UseVisualStyleBackColor = true;
             // 
-            // label5
+            // redLed2
             // 
-            this.label5.Location = new System.Drawing.Point(7, 108);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(73, 25);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "LED 4:";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.redLed2.AutoSize = true;
+            this.redLed2.Location = new System.Drawing.Point(91, 22);
+            this.redLed2.Name = "redLed2";
+            this.redLed2.Size = new System.Drawing.Size(60, 20);
+            this.redLed2.TabIndex = 13;
+            this.redLed2.Text = "Led 2";
+            this.redLed2.UseVisualStyleBackColor = true;
+            // 
+            // redLed3
+            // 
+            this.redLed3.AutoSize = true;
+            this.redLed3.Location = new System.Drawing.Point(22, 48);
+            this.redLed3.Name = "redLed3";
+            this.redLed3.Size = new System.Drawing.Size(60, 20);
+            this.redLed3.TabIndex = 12;
+            this.redLed3.Text = "Led 3";
+            this.redLed3.UseVisualStyleBackColor = true;
+            // 
+            // redLed1
+            // 
+            this.redLed1.AutoSize = true;
+            this.redLed1.Location = new System.Drawing.Point(22, 22);
+            this.redLed1.Name = "redLed1";
+            this.redLed1.Size = new System.Drawing.Size(60, 20);
+            this.redLed1.TabIndex = 11;
+            this.redLed1.Text = "Led 1";
+            this.redLed1.UseVisualStyleBackColor = true;
             // 
             // sendRedLedsButton
             // 
-            this.sendRedLedsButton.Location = new System.Drawing.Point(62, 138);
+            this.sendRedLedsButton.Location = new System.Drawing.Point(15, 78);
             this.sendRedLedsButton.Name = "sendRedLedsButton";
             this.sendRedLedsButton.Size = new System.Drawing.Size(136, 35);
             this.sendRedLedsButton.TabIndex = 10;
@@ -544,66 +523,6 @@
             this.sendRedLedsButton.Text = "Send";
             this.sendRedLedsButton.UseVisualStyleBackColor = true;
             this.sendRedLedsButton.Click += new System.EventHandler(this.sendRedLedsButton_Click);
-            // 
-            // redLed3Combo
-            // 
-            this.redLed3Combo.FormattingEnabled = true;
-            this.redLed3Combo.Items.AddRange(new object[] {
-            "On",
-            "Off"});
-            this.redLed3Combo.Location = new System.Drawing.Point(86, 79);
-            this.redLed3Combo.Name = "redLed3Combo";
-            this.redLed3Combo.Size = new System.Drawing.Size(151, 24);
-            this.redLed3Combo.TabIndex = 5;
-            // 
-            // label6
-            // 
-            this.label6.Location = new System.Drawing.Point(7, 78);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(73, 25);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "LED 3:";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // redLed2Combo
-            // 
-            this.redLed2Combo.FormattingEnabled = true;
-            this.redLed2Combo.Items.AddRange(new object[] {
-            "On",
-            "Off"});
-            this.redLed2Combo.Location = new System.Drawing.Point(86, 49);
-            this.redLed2Combo.Name = "redLed2Combo";
-            this.redLed2Combo.Size = new System.Drawing.Size(151, 24);
-            this.redLed2Combo.TabIndex = 3;
-            // 
-            // label7
-            // 
-            this.label7.Location = new System.Drawing.Point(7, 48);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(73, 25);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "LED 2:";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // redLed1Combo
-            // 
-            this.redLed1Combo.FormattingEnabled = true;
-            this.redLed1Combo.Items.AddRange(new object[] {
-            "On",
-            "Off"});
-            this.redLed1Combo.Location = new System.Drawing.Point(86, 19);
-            this.redLed1Combo.Name = "redLed1Combo";
-            this.redLed1Combo.Size = new System.Drawing.Size(151, 24);
-            this.redLed1Combo.TabIndex = 1;
-            // 
-            // label8
-            // 
-            this.label8.Location = new System.Drawing.Point(7, 19);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(73, 25);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "LED 1:";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // ledOffButton
             // 
@@ -636,7 +555,7 @@
             this.configBox.Controls.Add(this.powerlbl);
             this.configBox.Location = new System.Drawing.Point(52, 272);
             this.configBox.Name = "configBox";
-            this.configBox.Size = new System.Drawing.Size(248, 126);
+            this.configBox.Size = new System.Drawing.Size(248, 129);
             this.configBox.TabIndex = 2;
             this.configBox.TabStop = false;
             this.configBox.Text = "RF config";
@@ -695,7 +614,7 @@
             // closeButton
             // 
             this.closeButton.Enabled = false;
-            this.closeButton.Location = new System.Drawing.Point(389, 12);
+            this.closeButton.Location = new System.Drawing.Point(381, 19);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(75, 23);
             this.closeButton.TabIndex = 4;
@@ -708,7 +627,7 @@
             this.nameLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.nameLbl.AutoSize = true;
             this.nameLbl.ForeColor = System.Drawing.Color.Silver;
-            this.nameLbl.Location = new System.Drawing.Point(696, 483);
+            this.nameLbl.Location = new System.Drawing.Point(691, 513);
             this.nameLbl.Name = "nameLbl";
             this.nameLbl.Size = new System.Drawing.Size(207, 16);
             this.nameLbl.TabIndex = 5;
@@ -740,7 +659,7 @@
             this.clockInvertCb.AutoSize = true;
             this.clockInvertCb.Checked = true;
             this.clockInvertCb.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.clockInvertCb.Location = new System.Drawing.Point(88, 42);
+            this.clockInvertCb.Location = new System.Drawing.Point(228, 48);
             this.clockInvertCb.Name = "clockInvertCb";
             this.clockInvertCb.Size = new System.Drawing.Size(115, 20);
             this.clockInvertCb.TabIndex = 8;
@@ -752,28 +671,49 @@
             this.invertDataCb.AutoSize = true;
             this.invertDataCb.Checked = true;
             this.invertDataCb.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.invertDataCb.Location = new System.Drawing.Point(227, 42);
+            this.invertDataCb.Location = new System.Drawing.Point(346, 49);
             this.invertDataCb.Name = "invertDataCb";
             this.invertDataCb.Size = new System.Drawing.Size(110, 20);
             this.invertDataCb.TabIndex = 9;
             this.invertDataCb.Text = "Invert data pin";
             this.invertDataCb.UseVisualStyleBackColor = true;
             // 
+            // inputBox
+            // 
+            this.inputBox.Controls.Add(this.refreshComs);
+            this.inputBox.Controls.Add(this.invertDataCb);
+            this.inputBox.Controls.Add(this.comlbl);
+            this.inputBox.Controls.Add(this.clockInvertCb);
+            this.inputBox.Controls.Add(this.portCombo);
+            this.inputBox.Controls.Add(this.openButton);
+            this.inputBox.Controls.Add(this.closeButton);
+            this.inputBox.Location = new System.Drawing.Point(12, 12);
+            this.inputBox.Name = "inputBox";
+            this.inputBox.Size = new System.Drawing.Size(467, 81);
+            this.inputBox.TabIndex = 10;
+            this.inputBox.TabStop = false;
+            this.inputBox.Text = "Serial port";
+            // 
+            // refreshComs
+            // 
+            this.refreshComs.Location = new System.Drawing.Point(80, 49);
+            this.refreshComs.Name = "refreshComs";
+            this.refreshComs.Size = new System.Drawing.Size(94, 23);
+            this.refreshComs.TabIndex = 10;
+            this.refreshComs.Text = "Refresh list";
+            this.refreshComs.UseVisualStyleBackColor = true;
+            this.refreshComs.Click += new System.EventHandler(this.refreshComs_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(902, 498);
-            this.Controls.Add(this.invertDataCb);
-            this.Controls.Add(this.clockInvertCb);
+            this.ClientSize = new System.Drawing.Size(897, 528);
+            this.Controls.Add(this.inputBox);
             this.Controls.Add(this.linkLabel);
             this.Controls.Add(this.helpLbl);
             this.Controls.Add(this.nameLbl);
-            this.Controls.Add(this.closeButton);
             this.Controls.Add(this.commandBox);
-            this.Controls.Add(this.openButton);
-            this.Controls.Add(this.portCombo);
-            this.Controls.Add(this.comlbl);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -785,11 +725,15 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.commandBox.ResumeLayout(false);
-            this.controllerBox.ResumeLayout(false);
             this.greenManualBox.ResumeLayout(false);
+            this.greenManualBox.PerformLayout();
+            this.controllerBox.ResumeLayout(false);
             this.redBox.ResumeLayout(false);
             this.redManualBox.ResumeLayout(false);
+            this.redManualBox.PerformLayout();
             this.configBox.ResumeLayout(false);
+            this.inputBox.ResumeLayout(false);
+            this.inputBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -817,26 +761,8 @@
         private System.Windows.Forms.Button bootAnimNoPwrButton;
         private System.Windows.Forms.Button ledInitBlinkPWRButton;
         private System.Windows.Forms.Button bootAnimBlinkPWRButton;
-        private System.Windows.Forms.GroupBox greenManualBox;
-        private System.Windows.Forms.ComboBox greenLed4Combo;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button sendGreenLedsButton;
-        private System.Windows.Forms.ComboBox greenLed3Combo;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox greenLed2Combo;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox greenLed1Combo;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox redManualBox;
-        private System.Windows.Forms.ComboBox redLed4Combo;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button sendRedLedsButton;
-        private System.Windows.Forms.ComboBox redLed3Combo;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox redLed2Combo;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox redLed1Combo;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button clearErrorButton;
         private System.Windows.Forms.GroupBox redBox;
         private System.Windows.Forms.Button redBlinkAllButton;
@@ -856,6 +782,19 @@
         private System.Windows.Forms.LinkLabel linkLabel;
         private System.Windows.Forms.CheckBox clockInvertCb;
         private System.Windows.Forms.CheckBox invertDataCb;
+        private System.Windows.Forms.GroupBox greenManualBox;
+        private System.Windows.Forms.CheckBox greenLed4;
+        private System.Windows.Forms.CheckBox greenLed2;
+        private System.Windows.Forms.CheckBox greenLed3;
+        private System.Windows.Forms.CheckBox greenLed1;
+        private System.Windows.Forms.Button sendGreenLedsButton;
+        private System.Windows.Forms.CheckBox redLed4;
+        private System.Windows.Forms.CheckBox redLed2;
+        private System.Windows.Forms.CheckBox redLed3;
+        private System.Windows.Forms.CheckBox redLed1;
+        private System.Windows.Forms.Button connTest;
+        private System.Windows.Forms.GroupBox inputBox;
+        private System.Windows.Forms.Button refreshComs;
     }
 }
 
