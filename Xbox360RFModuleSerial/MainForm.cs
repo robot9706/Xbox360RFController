@@ -285,6 +285,7 @@ namespace Xbox360RFModuleSerial
             using (ConnTestForm t = new ConnTestForm(this))
             {
                 t.ShowDialog();
+                WriteData(true);
             }
         }
     }
